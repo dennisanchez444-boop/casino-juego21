@@ -27,20 +27,28 @@ public class Dealer {
 
 		for (String palo : palos) {
 			for (String valor : valores) {
-				Carta carta = new Carta(valor,palo);
+				Carta carta = new Carta(valor, palo);
 				naipe.add(carta);
 			}
 		}
 	}
-	
+
 	public void imprimirNaipe() {
-		for(Carta c : naipe) {
+		for (Carta c : naipe) {
 			c.imprimir();
 		}
 	}
-	
+
 	public int generarAleatorio(int maximo) {
 		Random random = new Random();
 		return random.nextInt(maximo + 1);
 	}
+
+	public Carta entregarCarta() {
+		int posicion = generarAleatorio(naipe.size() - 1);
+		Carta carta = naipe.get(posicion);
+		naipe.remove(posicion);
+		return carta;
+	}
+
 }
