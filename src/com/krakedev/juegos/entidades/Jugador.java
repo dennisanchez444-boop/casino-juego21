@@ -1,5 +1,20 @@
 package com.krakedev.juegos.entidades;
 
-public class Jugador {
+import java.util.ArrayList;
 
+public class Jugador {
+	private String nickname;
+	private ArrayList<Carta> cartas = new ArrayList<>();
+
+	public String getNickname() {
+		return nickname;
+	}
+
+	public void setNickname(String nickname) {
+		this.nickname = nickname;
+	}
+
+	public void recibirCarta(Carta carta) {
+		cartas.add(carta);
+	}
 }
