@@ -5,13 +5,16 @@ public class Carta {
 	private int valorJuego;
 	private String palo;
 
+	public Carta(String valor, String palo) {
+		this.valor = valor;
+		this.palo = palo;
+	}
+
 	public void imprimir() {
-		String mensaje = "Valor: " + valor +
-		        "\n" + "ValorJuego: " + valorJuego +
-		        "\n" + "Palo: " + palo;
+		String mensaje = valor + " - " + palo + " ValorJuego: " + valorJuego;
 		System.out.println(mensaje);
 	}
-	
+
 	public String getValor() {
 		return valor;
 	}
