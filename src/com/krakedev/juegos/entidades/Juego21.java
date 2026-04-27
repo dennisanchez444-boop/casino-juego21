@@ -59,6 +59,7 @@ public class Juego21 {
 				repartirCarta(j);
 			}
 		}
+		calcularTotal();
 	}
 	
 	public void imprimirJugadores() {
@@ -70,6 +71,18 @@ public class Juego21 {
 			}
 
 			System.out.println("-------------------");
+		}
+	}
+	
+	public void calcularTotal() {
+		for (Jugador j : jugadores) {
+			int total = 0;
+
+			for (Carta c : j.getCartas()) {
+				total += c.getValorJuego();
+			}
+
+			j.setPuntajeCartas(total);
 		}
 	}
 }
