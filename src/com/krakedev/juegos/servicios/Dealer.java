@@ -1,6 +1,7 @@
 package com.krakedev.juegos.servicios;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 import com.krakedev.juegos.entidades.Carta;
 
@@ -38,5 +39,8 @@ public class Dealer {
 		}
 	}
 	
-	
+	public int generarAleatorio(int maximo) {
+		Random random = new Random();
+		return random.nextInt(maximo + 1);
+	}
 }
