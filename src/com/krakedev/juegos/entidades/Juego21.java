@@ -61,7 +61,7 @@ public class Juego21 {
 		}
 		calcularTotal();
 	}
-	
+
 	public void imprimirJugadores() {
 		for (Jugador j : jugadores) {
 			System.out.println("Jugador: " + j.getNickname());
@@ -73,7 +73,7 @@ public class Juego21 {
 			System.out.println("-------------------");
 		}
 	}
-	
+
 	public void calcularTotal() {
 		for (Jugador j : jugadores) {
 			int total = 0;
@@ -84,5 +84,17 @@ public class Juego21 {
 
 			j.setPuntajeCartas(total);
 		}
+	}
+
+	public ArrayList<Jugador> validarGanador() {
+		ArrayList<Jugador> ganadores = new ArrayList<>();
+
+		for (Jugador j : jugadores) {
+			if (j.getPuntajeCartas() == 21) {
+				ganadores.add(j);
+			}
+		}
+
+		return ganadores;
 	}
 }
