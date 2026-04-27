@@ -7,7 +7,6 @@ public class TestJuego21 {
 
 	public static void main(String[] args) {
 		Juego21 juego = new Juego21();
-
 		juego.inicializar();
 
 		Jugador j1 = new Jugador();
@@ -23,14 +22,20 @@ public class TestJuego21 {
 		juego.agregarJugador(j2);
 		juego.agregarJugador(j3);
 
-		juego.repartirRonda();
+		var ganadores = juego.jugar();
 
 		System.out.println("=== CARTAS DE LOS JUGADORES ===");
 		juego.imprimirJugadores();
 
-		System.out.println("=== NAIPE RESTANTE ===");
-		juego.getDealer().imprimirNaipe();
+		System.out.println("=== RESULTADO ===");
 
+		if (ganadores.isEmpty()) {
+			System.out.println("No hubo ganadores");
+		} else {
+			for (Jugador j : ganadores) {
+				System.out.println("Ganador: " + j.getNickname() + 
+					" con " + j.getPuntajeCartas());
+			}
+		}
 	}
-
 }
