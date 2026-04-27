@@ -13,6 +13,10 @@ public class Jugador {
 	public void setNickname(String nickname) {
 		this.nickname = nickname;
 	}
+	
+	public ArrayList<Carta> getCartas() {
+		return cartas;
+	}
 
 	public void recibirCarta(Carta carta) {
 		cartas.add(carta);
